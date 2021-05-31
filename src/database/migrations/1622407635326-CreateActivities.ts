@@ -29,6 +29,14 @@ export class CreateActivities1622407635326 implements MigrationInterface {
                         type:"timestamp",
                         default: "now()",
                     }
+                ],
+                foreignKeys: [
+                    {
+                        name: 'ActivityCourseUnit',
+                        referencedTableName: 'course_units',
+                        referencedColumnNames: ['id'],
+                        columnNames: ['course_unit_id']
+                    }
                 ]
             })
         )
