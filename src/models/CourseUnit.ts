@@ -13,7 +13,7 @@ class CourseUnit {
     }
 
     @PrimaryColumn()
-    readonly id: string
+    readonly id: string;
 
     @Column()
     name: string;

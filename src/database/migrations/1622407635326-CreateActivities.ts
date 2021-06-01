@@ -17,7 +17,7 @@ export class CreateActivities1622407635326 implements MigrationInterface {
                         type:"varchar"
                     },
                     {
-                        name:"activity_date",
+                        name:"activy_date",
                         type:"date"
                     },
                     {
