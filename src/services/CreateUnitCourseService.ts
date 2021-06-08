@@ -8,7 +8,7 @@ interface CourseUnitData {
 
 class CreateCourseUnitService{
 
-    public async execute({name, description}: CourseUnitData): Promise<CourseUnit> {
+    public async execute({name, description}: CourseUnitData) {
 
         const courseUnitRepository = getRepository(CourseUnit);
 

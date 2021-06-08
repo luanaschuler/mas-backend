@@ -1,41 +1,45 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateActivities1622407635326 implements MigrationInterface {
+export class CreateActivies1623185780813 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "activities",
+                name:"activies",
                 columns: [
                     {
                         name:"id",
                         type:"varchar",
-                        isPrimary: true
+                        isPrimary: true,
                     },
                     {
                         name:"name",
-                        type:"varchar"
+                        type:"varchar",
                     },
                     {
                         name:"activy_date",
-                        type:"date"
+                        type:"timestamp",
                     },
                     {
-                        name:"course_unit_id",
-                        type:"varchar"
+                        name:"grade",
+                        type:"decimal",
+                    },
+                    {
+                        name:"courseUnitId",
+                        type:"varchar",
                     },
                     {
                         name:"created_at",
                         type:"timestamp",
-                        default: "now()",
+                        default:"now()",
                     }
                 ],
                 foreignKeys: [
                     {
-                        name: 'ActivityCourseUnit',
-                        referencedTableName: 'course_units',
+                        name:'ActivyCourseUnit',
+                        referencedTableName:'course_units',
                         referencedColumnNames: ['id'],
-                        columnNames: ['course_unit_id']
+                        columnNames: ['courseUnitId']
                     }
                 ]
             })

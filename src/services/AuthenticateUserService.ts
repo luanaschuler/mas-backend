@@ -19,11 +19,11 @@ class AuthenticateUserService {
 
         if(!user) {
             return {
-                error: 'user not found'
+                error: 'user does not exist'
             }
         }
 
-        const comparePassword = compare(password, user.password)
+        const comparePassword = compare(password, user.password);
 
         if(!comparePassword){
             return {
