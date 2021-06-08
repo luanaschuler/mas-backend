@@ -4,24 +4,26 @@ import { Activy } from '../models/Activy';
 interface ActivityData {
     name: string;
     activy_date: string;
-    course_unit_id: string;
+    grade: number;
+    courseUnitId: string;
 }
 
 class CreateActivityService{
 
-    public async execute({name, activy_date, course_unit_id}: ActivityData):Promise<Activy> {
+    async execute({name, activy_date, grade, courseUnitId}: ActivityData) {
 
-        const activitiesRepository = getRepository(Activy);
+        const activyRepository = getRepository(Activy);
 
-        const activity = activitiesRepository.create({
+        const activy = activyRepository.create({
             name,
             activy_date,
-            course_unit_id 
+            grade,
+            courseUnitId 
         });
 
-        await activitiesRepository.save(activity);
+        await activyRepository.save(activy);
 
-        return activity;
+        return activy;
         
     }
 
