@@ -12,10 +12,10 @@ class CreateCourseUnitService{
 
         const courseUnitRepository = getRepository(CourseUnit);
 
-        const courseUnit = {
+        const courseUnit = courseUnitRepository.create({
             name,
             description,
-        }
+        })
 
         await courseUnitRepository.save(courseUnit);
 
