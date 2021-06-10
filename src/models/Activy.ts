@@ -24,8 +24,8 @@ class Activy {
     @Column()
     courseUnitId: string;
 
-    @Column()
-    grade: number;
+    @Column({type: 'real'})
+    grade: string;
 
     @CreateDateColumn()
     created_at: Date;

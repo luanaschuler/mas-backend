@@ -10,7 +10,7 @@ interface ActivityData {
 
 class CreateActivityService{
 
-    async execute({name, activy_date, grade, courseUnitId}: ActivityData) {
+    public async execute({name, activy_date, grade, courseUnitId}: ActivityData):Promise<Activy> {
 
         const activyRepository = getRepository(Activy);
 
